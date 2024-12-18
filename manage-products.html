@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý sản phẩm</title>
+    <link href="./assets/img/logo.jpg" rel="icon" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="admin">
+    <div class="admin-sidebar">
+        <div class="admin-sidebar-logo">
+            <a href="index.html"> <img src="assets/img/logo3.png"></a>
+        </div>
+        <div class="admin-sidebar-nav">
+            <ul>
+                <li><a href="admin.html"><i class="fas fa-tachometer-alt"></i> Tổng quát</a></li>
+                <li><a class="active" href="manage-products.html"><i class="fa-solid fa-bag-shopping"></i> Quản lý sản
+                    phẩm</a></li>
+                <li><a href="manage-orders.html"><i class="fas fa-box"></i> Quản lý đơn hàng</a></li>
+                <li><a href="manage-customers.html"><i class="fas fa-users"></i> Quản lý khách hàng</a></li>
+                <li><a href="reports.html"><i class="fas fa-chart-line"></i> Báo cáo</a></li>
+                <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="admin-content">
+        <div class="admin-content-top">
+            <h1>Xin chào Admin, Watch - 63</h1>
+            <a href="index.html"> <img src="assets/img/icon.png"></a>
+        </div>
+        <div class="admin-content-main">
+            <!-- Product Management Section -->
+            <div class="product-management">
+                <h2>Quản lý sản phẩm</h2>
+                <div class="chuc-nang">
+                    <button onclick="openForm()"><i class="fa-solid fa-plus"></i></button>
+                    <input id="searchInput" oninput="searchProduct()" placeholder="Tìm kiếm sản phẩm theo tên hoặc id..." type="text">
+                </div>
+                <div id="overlay"></div>
+                <div id="productForm">
+                    <h2 id="formTitle">Thêm sản phẩm</h2>
+                    <label for="productName">Tên sản phẩm:</label>
+                    <input id="productName" type="text">
+                    <label for="productPrice">Giá sản phẩm:</label>
+                    <input id="productPrice" type="number">
+                    <label for="productCategory">Danh mục:</label>
+                    <input id="productCategory" type="text">
+                    <label for="productImage">Link ảnh sản phẩm:</label>
+                    <input id="productImage" type="text">
+                    <label for="productStatus">Trạng thái:</label>
+                    <select id="productStatus">
+                        <option value="Còn hàng">Còn hàng</option>
+                        <option value="Hết hàng">Hết hàng</option>
+                    </select>
+                    <button class="btn-save" onclick="saveProduct()">Lưu</button>
+                    <button class="btn-cancel" onclick="closeForm()">Hủy</button>
+                </div>
+
+                <table id="productTable">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Ảnh sản phẩm</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Danh mục</th>
+                        <th>Trạng thái</th>
+                        <th>Hành động</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Dữ liệu sản phẩm sẽ được thêm ở đây -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let editIndex = -1; // Lưu trạng thái sửa
+
+    // Sản phẩm mẫu có sẵn
+    const sampleProducts = [
+        {
+            name: "Đồng hồ decor thuận buồm xuôi gió DHA331",
+            price: 980000,
+            category: "Đồng hồ tranh",
+            image: "https://tuongxinh.com.vn/wp-content/uploads/2023/10/z4822361888385_a1846144eb9401a4122c9f0593330304-min-1-1024x1024.jpg",
+            status: "Còn hàng"
+        },
+        {
+            name: "Đồng hồ nghệ thuật trang trí nội thất DHA310",
+            price: 550000,
+            category: "Đồng hồ decor",
+            image: "https://tuongxinh.com.vn/wp-content/uploads/2023/12/z4964146940509_e0bfe429b4e2e3c8bc38f9ae7ab42412.jpg",
+            status: "Hết hàng"
+        },
+
+    ];
+
+    function openForm() {
+        document.getElementById("productForm").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("productForm").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+        clearForm();
+        editIndex = -1; // Reset trạng thái sửa
+    }
+
+    function clearForm() {
+        document.getElementById("productName").value = "";
+        document.getElementById("productPrice").value = "";
+        document.getElementById("productCategory").value = "";
+        document.getElementById("productImage").value = "";
+        document.getElementById("productStatus").value = "Còn hàng";
+    }
+
+    function saveProduct() {
+        const name = document.getElementById("productName").value;
+        const price = document.getElementById("productPrice").value;
+        const category = document.getElementById("productCategory").value;
+        const image = document.getElementById("productImage").value;
+        const status = document.getElementById("productStatus").value;
+
+        // Tạo ID từ từ cuối cùng của tên sản phẩm
+        const id = name.split(" ").pop();
+
+        const table = document.getElementById("productTable").querySelector("tbody");
+
+        if (editIndex === -1) {
+            // Thêm sản phẩm mới
+            const newRow = table.insertRow();
+            newRow.innerHTML = `
+            <td>${id}</td>
+            <td><img src="${image}" alt="${name}"></td>
+            <td>${name}</td>
+            <td>${parseInt(price).toLocaleString()} VND</td>
+            <td>${category}</td>
+            <td>${status}</td>
+            <td class="btn-act">
+                <button onclick="editProduct(this)">Sửa</button>
+                <button onclick="deleteProduct(this)">Xóa</button>
+            </td>
+        `;
+        } else {
+            // Cập nhật sản phẩm
+            const row = table.rows[editIndex];
+            row.cells[0].textContent = id; // Cập nhật lại ID
+            row.cells[2].textContent = name; // Cập nhật lại tên
+            row.cells[3].textContent = parseInt(price).toLocaleString() + " VND"; // Cập nhật lại giá
+            row.cells[4].textContent = category; // Cập nhật lại danh mục
+            row.cells[5].textContent = status; // Cập nhật lại trạng thái
+            row.cells[1].innerHTML = `<img src="${image}" alt="${name}">`; // Cập nhật lại ảnh
+        }
+
+        closeForm();
+    }
+
+
+    function editProduct(button) {
+        const row = button.closest("tr");
+        editIndex = row.rowIndex - 1; // Lưu vị trí dòng sửa
+
+        const name = row.cells[2].textContent;
+        let price = row.cells[3].textContent.replace(" VND", "").replace(/,/g, ""); // Xử lý giá: loại bỏ "VND" và dấu phẩy
+        const category = row.cells[4].textContent;
+        const image = row.cells[1].querySelector("img").src;
+        const status = row.cells[5].textContent;
+
+        // Điền các giá trị vào form sửa
+        document.getElementById("productName").value = name;
+        document.getElementById("productPrice").value = price; // Điền giá trị vào ô giá tiền (đảm bảo giá trị được điền vào ô)
+        document.getElementById("productCategory").value = category;
+        document.getElementById("productImage").value = image;
+        document.getElementById("productStatus").value = status;
+
+        openForm();
+    }
+
+
+    function deleteProduct(button) {
+        const row = button.closest("tr");
+        row.remove();
+    }
+
+    function searchProduct() {
+        const keyword = document.getElementById("searchInput").value.toLowerCase();
+        const rows = document.querySelectorAll("#productTable tbody tr");
+
+        rows.forEach(row => {
+            const id = row.cells[0].textContent.toLowerCase();
+            const name = row.cells[2].textContent.toLowerCase();
+            row.style.display = id.includes(keyword) || name.includes(keyword) ? "" : "none";
+        });
+    }
+
+    function isProductIdExist(id) {
+        const rows = document.querySelectorAll("#productTable tbody tr");
+        for (const row of rows) {
+            const existingId = row.cells[0].textContent;
+            if (existingId === id) {
+                return true; // Nếu ID đã tồn tại, trả về true
+            }
+        }
+        return false; // Nếu không tìm thấy ID, trả về false
+    }
+
+
+    // Hàm tự động thêm sản phẩm có sẵn vào bảng
+    function loadSampleProducts() {
+        const table = document.getElementById("productTable").querySelector("tbody");
+
+        sampleProducts.forEach(product => {
+            const id = product.name.split(" ").pop(); // Lấy ID từ tên sản phẩm
+            const row = table.insertRow();
+            row.innerHTML = `
+            <td>${id}</td>
+            <td><img src="${product.image}" alt="${product.name}"></td>
+            <td>${product.name}</td>
+            <td>${parseInt(product.price).toLocaleString()} VND</td>
+            <td>${product.category}</td>
+            <td>${product.status}</td>
+            <td class="btn-act">
+                <button onclick="editProduct(this)">Sửa</button>
+                <button onclick="deleteProduct(this)">Xóa</button>
+            </td>
+        `;
+        });
+    }
+    // Tải sản phẩm khi trang được tải
+    window.onload = loadSampleProducts;
+</script>
+
+</body>
+</html>

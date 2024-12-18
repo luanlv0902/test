@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chi tiết sản phẩm</title>
+  <link href="./assets/img/icon.png" rel="icon" type="image/x-icon">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <!-- Header -->
+  <div class="header">
+    <div class="header__logo">
+      <a href=""><img alt="" src="./assets/img/logo3.png"></a>
+    </div>
+    <div class="header__navbar">
+      <ul>
+        <li><a href="index.html">TRANG CHỦ</a></li>
+        <li><a href="about.html">GIỚI THIỆU</a></li>
+        <li>
+          <a  class="active" href="product.html">SẢN PHẨM</a>
+          <ul class="sub">
+            <li onclick="window.location.href=this.querySelector('a').href;"><a
+                    href="new-product.html">MỚI</a></li>
+            <li onclick="window.location.href=this.querySelector('a').href;"><a href="hot-product.html">BÁN
+              CHẠY</a></li>
+            <li onclick="window.location.href=this.querySelector('a').href;"><a href="sale-product.html">SALE</a>
+            </li>
+            <li onclick="window.location.href=this.querySelector('a').href;"><a href="picture-clock.html">ĐỒNG
+              HỒ TRANH</a></li>
+            <li onclick="window.location.href=this.querySelector('a').href;"><a href="peacock-clock.html">ĐỒNG
+              HỒ CON CÔNG</a></li>
+            <li onclick="window.location.href=this.querySelector('a').href;"><a href="gift-clock.html">ĐỒNG
+              HỒ QUÀ TẶNG</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">LIÊN HỆ</a></li>
+      </ul>
+    </div>
+    <div class="header__search">
+      <div class="header__search-icon">
+        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+      </div>
+      <input id="search-bar-all" placeholder="Tìm kiếm..." type="text">
+    </div>
+    <div class="header__cta">
+      <a href="">
+        <div class="header__cta-cart">
+          <div class="header__cta-cart-totalproduct"><span id="cart-count">0</span></div>
+          <a href="cart.html"><i class="fa-solid fa-shopping-cart"></i></a>
+        </div>
+      </a>
+      <!-- Các nút Đăng nhập, Đăng ký, Tài khoản và Đăng xuất -->
+      <a href="login.html" id="login-button" class="header__cta-login">
+        <div class="header__cta-login">
+          <i class="fa-solid fa-user"></i>
+          <h6>Đăng nhập</h6>
+        </div>
+      </a>
+      <a href="register.html" id="register-button" class="header__cta-login">
+        <div class="header__cta-login">
+          <i class="fa-solid fa-user"></i>
+          <h6>Đăng ký</h6>
+        </div>
+      </a>
+      <a href="account.html" id="account-button" class="header__cta-login" style="display: none;">
+        <div class="header__cta-login">
+          <i class="fa-solid fa-user account-icon"></i>
+          <h6>Tài khoản</h6>
+        </div>
+      </a>
+      <a href="#" id="logout-button" class="header__cta-login" style="display: none;">
+        <div class="header__cta-login">
+          <i class="fa-solid fa-sign-out-alt account-icon"></i>
+          <h6>Đăng xuất</h6>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!--Main - Product_Detail-->
+  <div class="main_product_detai">
+    <div class="return_menu">
+      <a href="index.html">Trang chủ ></a>
+      <a href="product.html">Sản phẩm ></a>
+      <a href="">Đồng hồ nghệ thuật Chim Công Vàng A25</a>
+    </div>
+    <!--<h1 class="title_pro">Thông tin sản phẩm</h1>-->
+    <div class="center_pro_detail">
+      <div class="img_pro_detail">
+        <div class="img_max_pro">
+          <span class="arrow left" onclick="prevImage()">&#10094;</span>
+          <img src="https://shouse.vn/wp-content/uploads/2019/11/dong-ho-con-cong-1-1.jpg" alt="">
+          <span class="arrow right" onclick="nextImage()">&#10095;</span>
+        </div>
+
+        <div class="img_min_pro">
+          <img src="https://shouse.vn/wp-content/uploads/2019/11/dong-ho-con-cong-1-1.jpg" alt="">
+          <img src="https://shouse.vn/wp-content/uploads/2019/11/dong-ho-con-chim-cong-3.jpg" alt="">
+          <img src="https://tapdoannangluongxanh.vn/wp-content/uploads/2021/03/denled_do-trang-tri-phong-ngu-cho-nu-e1616255056258.jpg" width="500px" height="500px" alt="">
+          <img src="assets/img/pd/pd_04.png" alt="">
+          <img src="assets/img/pd/pd_03.png" alt="">
+        </div>
+
+      </div>
+
+      <div class="infor_pro_detail">
+        <h1 class="name_pro_detail">Đồng hồ nghệ thuật Chim Công Vàng A25</h1>
+
+        <div class="price_pro">
+          <span>1.050.000đ</span>
+        </div>
+
+<!--        <div class="voucher_pro">-->
+<!--          <p>Mã giảm giá: <span class="voucher">Giảm 20k</span></p>-->
+<!--        </div>-->
+
+        <div class="refund_pro">
+          <p>Chính sách hoàn trả: </p>
+          <div class="refund_icon">
+            <i class="fa-solid fa-repeat"></i>
+            <span>Trả hàng 15 ngày</span>
+          </div>
+        </div>
+
+        <div class="transport_pro">
+          <p>Vận chuyển: </p>
+          <div class="transport_icon">
+            <i class="fa-solid fa-truck"></i>
+            <span>Vận chuyển miễn phí</span>
+          </div>
+        </div>
+
+        <div class="type_pro">
+          <p>Loại hàng:</p>
+          <div class="type">
+            <div class="premium_pro"><span>Cao cấp</span></div>
+            <div class="normal_pro"><span>Bình thường</span></div>
+          </div>
+
+        </div>
+
+        <div class="sl_product_detail">
+          <span class="sl">Số lượng:</span>
+          <div class="sl_pro">
+            <button class="decrease" onclick="changeQuantity(-1)">-</button>
+            <span id="quantity">1</span>
+            <button class="increase" onclick="changeQuantity(1)">+</button>
+          </div>
+          <div class="stock_pro_detail">
+            <span class="stock">Kho: <span id="num_stock">400</span></span>
+          </div>
+        </div>
+
+
+
+        <div class="buy_pro_detail">
+          <div class="shopingcart_pro">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <p>Thêm vào giỏ hàng</p>
+          </div>
+          <div class="buy_pro">
+            <p>MUA NGAY</p>
+          </div>
+
+        </div>
+
+        <div class="infor_refund_guarantee">
+          <div class="col_refund">
+            <div class="col_refund_icon">
+              <i class="fa-solid fa-truck"></i>
+            </div>
+            <div class="col_refund_text">
+              <p class="bold_refund">MIỄN PHÍ VẬN CHUYỂN VỚI ĐƠN HÀNG TỪ <span class="highlighted-text">1.000.000đ</span>
+              </p>
+              <p>Giao hàng SIÊU TỐC trong vòng 24h - SHOP COD miễn phí</p>
+            </div>
+          </div>
+
+          <div class="col_refund">
+            <div class="col_refund_icon">
+              <i class="fa-solid fa-shield"></i>
+            </div>
+            <div class="col_refund_text">
+              <p class="bold_refund">BẢO HÀNH <span class="highlighted-text">24 THÁNG </span>DO LỖI NHÀ
+                SẢN XUẤT</p>
+              <p>Tăng Thêm Thời Gian Bảo Hành Lên Đến 2 Năm</p>
+            </div>
+          </div>
+
+          <div class="col_refund">
+            <div class="col_refund_icon">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <div class="col_refund_text">
+              <p class="bold_refund">CAM KẾT <span class="highlighted-text">100% </span>CHÍNH HÃNG</p>
+              <p>Hoàn Lại Tiền Gấp 10 Lần Nếu Phát Hiện Hàng Giả - Hàng Nhái</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech_infor">
+      <hr class="line_tech">
+      <h1 class="tech_head">Thông số kỹ thuật</h1>
+      <table>
+        <tr>
+        </tr>
+        <tr>
+          <td><span class="border_tech">Thương hiệu: </span></td>
+          <td>SHOUSE (Thương hiệu đẳng cấp, đạt chuẩn Châu Âu)</td>
+          <td><span class="border_tech">Mã sản phẩm:</span></td>
+          <td>A25-WED-63-2024</td>
+        </tr>
+        <tr>
+          <td><span class="border_tech">Chiều cao:</span></td>
+          <td>70cm</td>
+          <td><span class="border_tech">Chiều rộng:</span></td>
+          <td>67cm</td>
+        </tr>
+        <tr>
+          <td><span class="border_tech">Mặt đồng hồ:</span></td>
+          <td>24cm</td>
+          <td><span class="border_tech">Động cơ:</span></td>
+          <td>Máy đồng hồ kim trôi, không gây tiếng ồn</td>
+        </tr>
+        <tr>
+          <td><span class="border_tech">Chất liệu:</span></td>
+          <td>Thép cao cấp</td>
+          <td><span class="border_tech">Màu sản phẩm:</span></td>
+          <td>Vàng, xanh</td>
+        </tr>
+        <tr>
+          <td><span class="border_tech">Phong cách:</span></td>
+          <td>Cổ điển, sang trọng</td>
+          <td><span class="border_tech">Năng lượng:</span></td>
+          <td>Pin</td>
+        </tr>
+      </table>
+
+      <hr class="line_tech">
+      <h1 class="tech_head">Thông tin sản phẩm</h1>
+
+      <div class="text_infor_pd">
+        <p class="pd_text">*SHOUSE là thương hiệu đồng hồ treo tường đẳng cấp, uy tín đã và đang xuất khẩu sang các nước Châu Âu như: Pháp, Đức, Ý, Thụy Điển … Các sản phẩm của chúng tôi đều được thiết kế tinh xảo từ đường nét đến nước sơn.  Đồng hồ treo tường  Chim Công Vàng A25 là hàng loại 1 chất lượng cao đang được rất nhiều khách hàng chọn lựa.</p>
+        <p class="pd_text">Chim công là là loài chim mang vẻ đẹp cao quý và có ý nghĩa trong Phật Giáo. Theo truyền thuyết Phật Giáo, hai thần điểu có sức mạnh và khả năng khai thiên lập quốc là đại bàng Kim Sí Điểu và Khổng Tước.</p>
+        <div class="video_pro">
+          <iframe width="700" height="400" src="https://www.youtube.com/embed/Ld8I6ZbQtMQ?si=UKSk55dKCqH0e3AK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <p class="pd_text">Cả 2 đều được sinh ra từ Phượng Hoàng. Thân hình khổng tước luôn rực cháy khiến bất cứ sinh vật nao tới gần cũng bị thiêu rụi. Trong văn hóa Ấn Độ, chim Khổng Tước gắn liền với hình ảnh nữ thần Lakshmi, nữ thần của sắc đẹp, sự nhân từ, sẻ chia, may mắn, sự giàu có và thịnh vượng. Có thể thấy, chim công không chỉ là một loài thú cảnh. Chúng còn là biểu trưng văn hóa ý nghĩa, sâu sắc và cao đẹp tại các quốc gia khác nhau.</p>
+        <p class="pd_text">Các sản phẩm quà tặng đồng hồ chim công nghệ thuật cũng được ra đời từ đây, bằng cách vận dụng những ý nghĩa tốt đẹp. Bạn có thể tặng chim công đơn hoặc đôi tới người thân, bạn bè xung quanh nhân những ngày đặc biệt. Chắc chắn, họ sẽ vừa cảm động lại vô cùng hạnh phúc đó!</p>
+        <hr class="line_tech">
+        <h1 class="tech_head">Phân biệt hàng thật - giả</h1>
+        <div class="img_check_pro">
+          <img src="assets/img/pd/pd_01.png" alt="">
+          <img src="assets/img/pd/pd_02.png" alt="">
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+</div>
+
+
+<!-- Hộp thoại chat -->
+<div class="chat-container">
+  <div class="chat-button" id="chatButton" onclick="toggleChat()">
+    <span id="chatIcon">💬</span>
+  </div>
+  <div class="chat-box" id="chatBox">
+    <div class="chat-header">
+      <img src="https://media.shopdongho.com/2023/09/chat-support-icon.svg" alt="">
+      <h4>Hỗ trợ trực tuyến</h4>
+    </div>
+    <div class="chat-content">
+      <a href="">
+        <div class="chat-content-icons">
+          <img src="https://media.shopdongho.com/2023/03/68OaMdCz-socials-call-icon.svg" alt="">
+          <p class="greentext">0346.775.812</p>
+        </div>
+      </a>
+      <a href="">
+        <div class="chat-content-icons">
+          <img src="https://media.shopdongho.com/2023/03/YIo6s9FW-socials-messenger-icon.svg" alt="">
+          <p>Messenger Chat</p>
+        </div>
+      </a>
+      <a href="https://zalo.me/g/erqzqr097">
+        <div class="chat-content-icons">
+          <img src="https://media.shopdongho.com/2023/03/mEWLxvCZ-socials-zalo-icon.svg" alt="">
+          <p>Zalo Chat</p>
+        </div>
+      </a>
+      <a href="">
+        <div class="chat-content-icons">
+          <img src="https://media.shopdongho.com/2023/08/logo-vector-icon.svg" alt="">
+          <p>Hệ Thống Cửa Hàng</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Nút quay lại đầu trang -->
+<a href="#" id="backToTop" class="back-to-top">
+  <i class="fa-solid fa-chevron-up"></i>
+</a>
+
+<!--  Footer -->
+<div class="footer">
+  <div class="footer-in">
+    <div class="footer-in-col">
+      <div class="footer-in-col-1">
+        <div class="icons-col-1">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <p>
+          Showroom: Số 54/274 Nguyễn Lân,<br> Trường Chinh, Hà Nội
+        </p>
+      </div>
+      <div class="footer-in-col-1">
+        <div class="icons-col-1">
+          <i class="fa-solid fa-phone"></i>
+        </div>
+        <p>
+          Điện thoại: <span><a href="">0374.517349</a> </span>-<span> <a
+                href="">0374.517349</a></span><br>
+          -<span> <a href="">0374.517349</a></span>
+        </p>
+      </div>
+      <div class="footer-in-col-1">
+        <div class="icons-col-1">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <p>
+          Email: <a href="">nhom63@gmail.com.vn</a>
+        </p>
+      </div>
+      <div class="footer-in-col-1">
+        <div class="icons-col-1">
+          <i class="fa-solid fa-clock"></i>
+        </div>
+        <p>
+          Giờ mở cửa: 07:00 - 21:00h hàng ngày
+        </p>
+      </div>
+    </div>
+    <div class="footer-in-col">
+      <p class="footer-large-text">
+        HƯỚNG DẪN KHÁCH HÀNG
+      </p>
+      <p>
+        <a href="">Hướng dẫn mua hàng tại cửa hàng</a>
+      </p>
+      <p>
+        <a href="">Hướng dẫn mua hàng Online</a>
+      </p>
+      <p>
+        <a href="">Chính sách kiểm hàng</a>
+      </p>
+      <p>
+        <a href="">Chính sách xử lý khiếu nại</a>
+      </p>
+      <div class="icons-check">
+        <img src="https://tuongxinh.com.vn/wp-content/uploads/2024/06/logoSaleNoti.png" alt="">
+      </div>
+    </div>
+    <div class="footer-in-col">
+      <p class="footer-large-text">
+        CHÍNH SÁCH ƯU ĐÃI
+      </p>
+      <p>
+        <a href="">Chính sách vận chuyển</a>
+      </p>
+      <p>
+        <a href="">Chính sách đổi trả và hoàn tiền</a>
+      </p>
+      <p>
+        <a href="">Chính sách thanh toán</a>
+      </p>
+      <p>
+        <a href="">Chính sách bảo mật thông tin</a>
+      </p>
+      <div class="icons-pay">
+        <img src="https://tuongxinh.com.vn/wp-content/uploads/2023/09/footer_trustbadge.png" alt="">
+      </div>
+    </div>
+    <div class="footer-in-col">
+      <p class="footer-large-text">ĐĂNG KÝ TƯ VẤN</p>
+      <div class="footer-in-col-input">
+        <input type="text" placeholder="Nhập số điện thoại">
+        <button>Gửi</button>
+      </div>
+      <div class="icons-contact">
+        <a href=""><img src="https://tuongxinh.com.vn/wp-content/uploads/2023/09/facebook-1.png" alt=""></a>
+        <a href=""><img src="https://tuongxinh.com.vn/wp-content/uploads/2023/09/zalo.png" alt=""></a>
+        <a href=""><img
+                src="https://tuongxinh.com.vn/wp-content/uploads/2023/09/logo-youtube-tuong-xinh.png"
+                alt=""></a>
+        <a href=""><img src="https://tuongxinh.com.vn/wp-content/uploads/2023/09/tiktok.png" alt=""></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer-copyright">
+  <p>
+    &copy; 2024 WATCH63. DESIGN BY WATCH 63
+  </p>
+</div>
+
+
+</div>
+<script src="assets/script/chatbox.js"></script>
+<script src="assets/script/logout.js"></script>
+<script src="assets/script/product_detail.js"></script>
+<script src="assets/script/cart.js"></script>
+<script src="assets/script/search-all.js"></script>
+<script src="assets/script/back_to_top.js"></script>
+</body>
+</html>

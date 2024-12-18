@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý đơn hàng</title>
+    <link href="./assets/img/logo.jpg" rel="icon" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="admin">
+    <div class="admin-sidebar">
+        <div class="admin-sidebar-logo">
+            <a href="index.html"> <img src="assets/img/logo3.png"></a>
+        </div>
+        <div class="admin-sidebar-nav">
+            <ul>
+                <li><a href="admin.html"><i class="fas fa-tachometer-alt"></i> Tổng quát</a></li>
+                <li><a href="manage-products.html"><i class="fa-solid fa-bag-shopping"></i> Quản lý sản phẩm</a></li>
+                <li><a class="active" href="manage-orders.html"><i class="fas fa-box"></i> Quản lý đơn hàng</a></li>
+                <li><a href="manage-customers.html"><i class="fas fa-users"></i> Quản lý khách hàng</a></li>
+                <li><a href="reports.html"><i class="fas fa-chart-line"></i> Báo cáo</a></li>
+                <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="admin-content">
+        <div class="admin-content-top">
+            <h1>Xin chào Admin, Watch - 63</h1>
+            <a href="index.html"> <img src="assets/img/icon.png"></a>
+        </div>
+        <div class="admin-content-main">
+            <div class="order-management">
+                <h1>Quản lý đơn hàng</h1>
+                <div class="search-filter">
+                    <input type="text" id="search" placeholder="Tìm kiếm theo ID hoặc tên sản phẩm..." oninput="searchOrders()">
+                    <select id="filter-status" onchange="filterOrders()">
+                        <option value="">Tất cả trạng thái</option>
+                        <option value="Đang xử lý">Đang xử lý</option>
+                        <option value="Đã giao">Đã giao</option>
+                        <option value="Đã hủy">Đã hủy</option>
+                    </select>
+                </div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Khách hàng</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Ngày đặt</th>
+                        <th>Tổng tiền</th>
+                        <th>Trạng thái</th>
+                        <th>Hành động</th>
+                    </tr>
+                    </thead>
+                    <tbody id="order-list">
+                    <!-- Dữ liệu đơn hàng sẽ được thêm ở đây -->
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    // Mock data (dữ liệu giả)
+    const orders = [
+        {
+            id: 1,
+            customer: "Nguyễn Văn A",
+            products: ["Đồng hồ decor thuận buồm xuôi gió DHA331"],
+            date: "2024-11-01",
+            total: 980000,
+            status: "Đang xử lý"
+        },
+        {
+            id: 2,
+            customer: "Trần Thị B",
+            products: ["Đồng hồ hoa lá decor trang trí nội thất DHA118"],
+            date: "2024-11-02",
+            total: 1050000,
+            status: "Đã giao"
+        },
+        {
+            id: 3,
+            customer: "Lê Văn C",
+            products: ["Đồng hồ nghệ thuật trang trí nội thất DHA310"],
+            date: "2024-11-03",
+            total: 1200000,
+            status: "Đã hủy"
+        },
+        {
+            id: 4,
+            customer: "Phạm Văn D",
+            products: ["Đồng hồ nghệ thuật trang trí nội thất DHA319"],
+            date: "2024-11-04",
+            total: 1280000,
+            status: "Đang xử lý"
+        }
+    ];
+
+    // Hiển thị danh sách đơn hàng
+    function renderOrders(data) {
+        const orderList = document.getElementById("order-list");
+        orderList.innerHTML = ""; // Xóa dữ liệu cũ
+        data.forEach(order => {
+            const productNames = order.products.join(", "); // Liệt kê tên các sản phẩm
+            orderList.innerHTML += `
+            <tr>
+                <td>${order.id}</td>
+                <td>${order.customer}</td>
+                <td>${productNames}</td>
+                <td>${order.date}</td>
+                <td>${order.total.toLocaleString()} VND</td>
+                <td>${order.status}</td>
+                <td>
+                    ${order.status === 'Đang xử lý' ? `
+                        <button onclick="updateStatus(${order.id}, 'Đã giao')">Giao hàng</button>
+                        <button onclick="updateStatus(${order.id}, 'Đã hủy')">Hủy</button>
+                    ` : ''}
+                </td>
+            </tr>
+        `;
+        });
+    }
+    // Tìm kiếm đơn hàng theo ID hoặc tên sản phẩm
+    function searchOrders() {
+        const keyword = document.getElementById("search").value.toLowerCase();
+
+        // Lọc đơn hàng theo ID hoặc tên sản phẩm
+        const filtered = orders.filter(order => {
+            const matchesId = order.id.toString().includes(keyword);  // Kiểm tra theo ID
+            const matchesProduct = order.products.some(product => product.toLowerCase().includes(keyword));  // Kiểm tra theo tên sản phẩm
+            return matchesId || matchesProduct;  // Trả về kết quả khi khớp ID hoặc sản phẩm
+        });
+
+        renderOrders(filtered);
+    }
+
+    // Lọc đơn hàng theo trạng thái
+    function filterOrders() {
+        const status = document.getElementById("filter-status").value;
+        const filtered = status ? orders.filter(order => order.status === status) : orders;
+        renderOrders(filtered);
+    }
+
+    // Cập nhật trạng thái đơn hàng
+    function updateStatus(id, newStatus) {
+        const order = orders.find(order => order.id === id);
+        if (order) {
+            order.status = newStatus;
+            renderOrders(orders);
+        }
+    }
+
+    // Khởi tạo
+    renderOrders(orders);
+
+</script>
+</body>
+</html>

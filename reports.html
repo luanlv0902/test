@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thống kê</title>
+    <link href="./assets/img/logo.jpg" rel="icon" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Thêm Chart.js để vẽ biểu đồ -->
+</head>
+<body>
+<div id="admin">
+    <div class="admin-sidebar">
+        <div class="admin-sidebar-logo">
+            <a href="index.html"> <img src="assets/img/logo3.png"></a>
+        </div>
+        <div class="admin-sidebar-nav">
+            <ul>
+                <li><a href="admin.html"><i class="fas fa-tachometer-alt"></i> Tổng quát</a></li>
+                <li><a href="manage-products.html"><i class="fa-solid fa-bag-shopping"></i> Quản lý sản phẩm</a></li>
+                <li><a href="manage-orders.html"><i class="fas fa-box"></i> Quản lý đơn hàng</a></li>
+                <li><a href="manage-customers.html"><i class="fas fa-users"></i> Quản lý khách hàng</a></li>
+                <li><a class="active" href="reports.html"><i class="fas fa-chart-line"></i> Báo cáo</a></li>
+                <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="admin-content">
+        <div class="admin-content-top">
+            <h1>Xin chào Admin, Watch - 63</h1>
+            <a href="index.html"> <img src="assets/img/icon.png"></a>
+        </div>
+        <div class="admin-content-main">
+            <!-- Báo cáo Section -->
+            <div class="report-section">
+
+
+
+                <!-- Doanh thu tháng 11 -->
+                <div class="report-card">
+                    <h3>Doanh thu trong tháng này:</h3>
+                    <div class="report-daily-chart">
+                        <canvas id="dailyRevenueChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Doanh thu theo tháng -->
+                <div class="report-card">
+                    <h3>Doanh thu theo tháng:</h3>
+                    <div class="report-content">
+                        <canvas id="revenueChart"></canvas> <!-- Biểu đồ doanh thu -->
+                    </div>
+                </div>
+
+                <!-- Sản phẩm bán chạy -->
+                <div class="report-card">
+                    <h3>Sản phẩm bán chạy</h3>
+                    <table class="report-table">
+                        <thead>
+                        <tr>
+                            <th>Sản phẩm</th>
+                            <th>Số lượng bán</th>
+                            <th>Doanh thu</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Đồng hồ nghệ thuật Chim Công Vàng A25</td>
+                            <td>30</td>
+                            <td> 31.500.000 ₫</td>
+                        </tr>
+                        <tr>
+                            <td>Đồng hồ pha lê để bàn quà tặng khách hàng, quà tặng doanh nghiệp QT01</td>
+                            <td>20</td>
+                            <td>17.000.000 ₫</td>
+                        </tr>
+                        <tr>
+                            <td>Đồng hồ nghệ thuật trang trí nội thất DHA311</td>
+                            <td>15</td>
+                            <td>18.000.000 ₫</td>
+                        </tr>
+                        <tr>
+                            <td>Đồng hồ nghệ thuật trang trí nội thất DHA319</td>
+                            <td>17</td>
+                            <td> 21.760.000 ₫</td>
+                        </tr>
+                        <tr>
+                            <td>Đồng hồ treo tường nghệ thuật DH0138</td>
+                            <td>22</td>
+                            <td> 14.960.000 ₫</td>
+                        </tr>
+                        <tr>
+                            <td>Đồng hồ nghệ thuật trang trí nội thất DHA317</td>
+                            <td>10</td>
+                            <td> 11.500.000 ₫</td>
+                        </tr>
+                        <tr>
+                            <td>Đồng hồ decor thuận buồm xuôi gió DHA331</td>
+                            <td>25</td>
+                            <td> 24.500.000 ₫</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Thống kê khách hàng -->
+                <div class="report-card">
+                    <h3>Thống kê khách hàng</h3>
+                    <div class="report-content">
+                        <canvas id="customerChart"></canvas> <!-- Biểu đồ khách hàng -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="assets/script/report.js"></script>
+</body>
+</html>

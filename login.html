@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng nhập</title>
+  <link href="./assets/img/icon.png" rel="icon" type="image/x-icon">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="login-container">
+  <form action="#" method="post">
+    <a href="index.html" class="back-button"><div class="back-container"><i class="fas fa-arrow-left"></i></div></a>
+    <h2>Đăng Nhập</h2>
+    <div class="username-container">
+      <input type="text" id="username" name="username" placeholder="Tên đăng nhập" required autofocus>
+    </div>
+    <div class="password-container">
+      <input type="password" id="password" name="password" placeholder="Mật khẩu" required>
+    </div>
+    <div class="remember-container">
+      <input type="checkbox" id="remember" name="remember">
+      <label for="remember">Lưu mật khẩu</label>
+    </div>
+    <button type="submit">Đăng nhập</button>
+    <div class="login-more">
+      <a href="forgotpassword.html">Quên mật khẩu?</a>
+      <a href="register.html">Đăng ký</a>
+    </div>
+  </form>
+</div>
+
+<script src="assets/script/login.js"></script>
+</body>
+</html>

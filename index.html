@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đồng Hồ 63</title>
+    <link href="./assets/img/icon.png" rel="icon" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <div class="header__logo">
+            <a href=""><img alt="" src="./assets/img/logo3.png"></a>
+        </div>
+        <div class="header__navbar">
+            <ul>
+                <li><a class="active" href="index.html">TRANG CHỦ</a></li>
+                <li><a href="about.html">GIỚI THIỆU</a></li>
+                <li>
+                    <a href="product.html">SẢN PHẨM</a>
+                    <ul class="sub">
+                        <li onclick="window.location.href=this.querySelector('a').href;"><a
+                                href="new-product.html">MỚI</a></li>
+                        <li onclick="window.location.href=this.querySelector('a').href;"><a href="hot-product.html">BÁN
+                            CHẠY</a></li>
+                        <li onclick="window.location.href=this.querySelector('a').href;"><a href="sale-product.html">SALE</a>
+                        </li>
+                        <li onclick="window.location.href=this.querySelector('a').href;"><a href="picture-clock.html">ĐỒNG
+                            HỒ TRANH</a></li>
+                        <li onclick="window.location.href=this.querySelector('a').href;"><a href="peacock-clock.html">ĐỒNG
+                            HỒ CON CÔNG</a></li>
+                        <li onclick="window.location.href=this.querySelector('a').href;"><a href="gift-clock.html">ĐỒNG
+                            HỒ QUÀ TẶNG</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">LIÊN HỆ</a></li>
+            </ul>
+        </div>
+        <div class="header__search">
+            <div class="header__search-icon">
+                <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+            </div>
+            <input id="search-bar-all" placeholder="Tìm kiếm..." type="text">
+        </div>
+        <div class="header__cta">
+            <a href="">
+                <div class="header__cta-cart">
+                    <div class="header__cta-cart-totalproduct"><span id="cart-count">0</span></div>
+                    <a href="cart.html"><i class="fa-solid fa-shopping-cart"></i></a>
+                </div>
+            </a>
+            <!-- Các nút Đăng nhập, Đăng ký, Tài khoản và Đăng xuất -->
+            <a class="header__cta-login" href="login.html" id="login-button">
+                <div class="header__cta-login">
+                    <i class="fa-solid fa-user"></i>
+                    <h6>Đăng nhập</h6>
+                </div>
+            </a>
+            <a class="header__cta-login" href="register.html" id="register-button">
+                <div class="header__cta-login">
+                    <i class="fa-solid fa-user"></i>
+                    <h6>Đăng ký</h6>
+                </div>
+            </a>
+            <a class="header__cta-login" href="account.html" id="account-button" style="display: none;">
+                <div class="header__cta-login">
+                    <i class="fa-solid fa-user account-icon"></i>
+                    <h6>Tài khoản</h6>
+                </div>
+            </a>
+            <a class="header__cta-login" href="#" id="logout-button" style="display: none;">
+                <div class="header__cta-login">
+                    <i class="fa-solid fa-sign-out-alt account-icon"></i>
+                    <h6>Đăng xuất</h6>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Background -->
+    <div class="background"></div>
+
+    <!--  Contain -->
+    <div class="main container-in">
+
+        <!--  Service -->
+        <div class="main__service">
+            <div class="col">
+                <i class="fa-solid fa-globe"></i>
+                <p class="boldtext">Thanh toán khi nhận hàng</p>
+                <p class="lighttext">Giao hàng toàn quốc</p>
+            </div>
+            <div class="col">
+                <i class="fa-solid fa-truck"></i>
+                <p class="boldtext">Hàng đẹp chất lượng cao</p>
+                <p class="lighttext">Khác biệt so với hàng rẻ trên thị trường</p>
+            </div>
+            <div class="col">
+                <i class="fa-sharp fa-solid fa-box"></i>
+                <p class="boldtext">Bảo hành dài hạn</p>
+                <p class="lighttext">Bảo hành 24 tháng</p>
+            </div>
+        </div>
+
+
+        <!-- Product -->
+
+            <div id="main__product">
+                <div class="main__product-clock">
+                    <h2>MỚI</h2>
+                    <div class="pro_container">
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2024/10/dha331-3.jpg">
+                                <span>Đồng hồ decor thuận buồm xuôi gió DHA331</span>
+                                <h2>980.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Đồng hồ decor thuận buồm xuôi gió DHA331',
+                        price: '980.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2024/10/dha331-3.jpg',
+                        isNew: true,
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2024/08/dh045.jpg">
+                                <span>Đồng hồ treo tường cao cấp DH045</span>
+                                <h2>1.050.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'ĐỒNG HỒ TREO TƯỜNG CAO CẤP DH045',
+                        price: '1.050.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2024/08/dh045.jpg',
+                        isNew: true,
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2024/07/dha329.jpg">
+                                <span>Đồng hồ phong cảnh cao cấp trang trí nội thất DHA329</span>
+                                <h2>4.950.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Đồng hồ phong cảnh cao cấp trang trí nội thất DHA329',
+                        price: '4.950.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2024/07/dha329.jpg',
+                        isNew: true,
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2024/06/dong-ho-cao-cap-1.jpg">
+                                <span>Đồng hồ bông hoa cao cấp trang trí nội thất sang trọng DHA328</span>
+                                <h2>4.600.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Đồng hồ bông hoa cao cấp trang trí nội thất sang trọng DHA328',
+                        price: '3.600.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2024/06/dong-ho-cao-cap-1.jpg',
+                        isNew: true,
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="more-product" onclick="window.location.href=this.querySelector('a').href;"><a
+                            href="new-product.html">Xem thêm</a><i class="fa-solid fa-angles-right"></i></div>
+                </div>
+
+                <div class="main__product-clock">
+                    <h2>BÁN CHẠY</h2>
+                    <div class="pro_container">
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2023/10/z4822361888385_a1846144eb9401a4122c9f0593330304-min-1-1024x1024.jpg">
+                                <span>Đồng hồ pha lê để bàn quà tặng khách hàng, quà tặng doanh nghiệp QT01</span>
+                                <h2>850.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Đồng hồ pha lê để bàn quà tặng khách hàng, quà tặng doanh nghiệp QT01',
+                        price: '850.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2023/10/z4822361888385_a1846144eb9401a4122c9f0593330304-min-1-1024x1024.jpg',
+                        discount: 50
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2023/12/z4964146930694_ace6ab4173607851b3a45896aa9e78af.jpg">
+                                <span>Đồng hồ nghệ thuật trang trí nội thất DHA311</span>
+                                <h2>1.200.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Đồng hồ nghệ thuật trang trí nội thất DHA311',
+                        price: '1.200.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2023/12/z4964146930694_ace6ab4173607851b3a45896aa9e78af.jpg',
+                        discount: 34
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2024/04/435001539_336559559040277_8385888671226252026_n.jpg">
+                                <span>Đồng hồ nghệ thuật trang trí nội thất DHA319</span>
+                                <h2>1.280.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Đồng hồ nghệ thuật trang trí nội thất DHA319',
+                        price: '1.280.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2024/04/435001539_336559559040277_8385888671226252026_n.jpg',
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2016/05/DH0138.jpg">
+                                <span>Đồng hồ treo tường nghệ thuật DH0138</span>
+                                <h2>680.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Đồng hồ treo tường nghệ thuật DH0138',
+                        price: '680.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2016/05/DH0138.jpg',
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="more-product" onclick="window.location.href=this.querySelector('a').href;"><a
+                            href="hot-product.html">Xem thêm</a><i class="fa-solid fa-angles-right"></i></div>
+                </div>
+
+                <div class="main__product-clock">
+                    <h2>SALE</h2>
+                    <div class="pro_container">
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2023/10/z4822361888385_a1846144eb9401a4122c9f0593330304-min-1-1024x1024.jpg">
+                                <span>Đồng hồ pha lê để bàn quà tặng khách hàng, quà tặng doanh nghiệp QT01</span>
+                                <h2>850.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Đồng hồ pha lê để bàn quà tặng khách hàng, quà tặng doanh nghiệp QT01',
+                        price: '850.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2023/10/z4822361888385_a1846144eb9401a4122c9f0593330304-min-1-1024x1024.jpg',
+                        discount: 50
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2023/12/z4964146930694_ace6ab4173607851b3a45896aa9e78af.jpg">
+                                <span>Đồng hồ nghệ thuật trang trí nội thất DHA311</span>
+                                <h2>1.200.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Đồng hồ nghệ thuật trang trí nội thất DHA311',
+                        price: '1.200.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2023/12/z4964146930694_ace6ab4173607851b3a45896aa9e78af.jpg',
+                        discount: 34
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2024/04/431447615_708728268112596_5572117827573194601_n.jpg">
+                                <span>Đồng hồ nghệ thuật trang trí nội thất DHA316</span>
+                                <h2>1.150.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Đồng hồ nghệ thuật trang trí nội thất DHA316',
+                        price: '1.150.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2024/04/431447615_708728268112596_5572117827573194601_n.jpg',
+                        discount: 23
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2024/04/431675174_338217022020814_3265962644664062728_n.jpg">
+                                <span>Đồng hồ nghệ thuật trang trí nội thất DHA317</span>
+                                <h2>1.150.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Đồng hồ nghệ thuật trang trí nội thất DHA317',
+                        price: '1.150.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2024/04/431675174_338217022020814_3265962644664062728_n.jpg',
+                        discount: 25
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="more-product" onclick="window.location.href=this.querySelector('a').href;"><a
+                            href="sale-product.html">Xem thêm</a><i class="fa-solid fa-angles-right"></i></div>
+                </div>
+
+                <div class="main__product-clock">
+                    <h2>ĐỒNG HỒ TRANH</h2>
+                    <div class="pro_container">
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2023/11/maket-2-min.png">
+                                <span>Tranh tráng gương 3D hươu tuần lộc hiện đại decor trang trí nhà cửa TG3199</span>
+                                <h2>750.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Tranh tráng gương 3D hươu tuần lộc hiện đại decor trang trí nhà cửa TG3199',
+                        price: '750.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2023/11/maket-2-min.png',
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2016/08/1-min.jpg">
+                                <span>Tranh đồng hồ mã đáo thành công PT0105</span>
+                                <h2>750.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Tranh đồng hồ mã đáo thành công PT0105',
+                        price: '750.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2016/08/1-min.jpg',
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2023/10/3-1.jpg">
+                                <span>Tranh đồng hồ nghệ thuật trang trí phòng ăn TG2149</span>
+                                <h2>680.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Tranh đồng hồ nghệ thuật trang trí phòng ăn TG2149',
+                        price: '680.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2023/10/3-1.jpg',
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2021/04/33-min.jpg">
+                                <span>Tranh đồng hồ trang trí Hoa Sen HL1939</span>
+                                <h2>650.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Tranh đồng hồ trang trí Hoa Sen HL1939',
+                        price: '650.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2021/04/33-min.jpg',
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="more-product" onclick="window.location.href=this.querySelector('a').href;"><a
+                            href="picture-clock.html">Xem thêm</a><i class="fa-solid fa-angles-right"></i></div>
+                </div>
+
+                <div class="main__product-clock">
+                    <h2>ĐỒNG HỒ CON CÔNG</h2>
+                    <div class="pro_container">
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2019/05/dong-ho-con-cong-doi-trang-tri-phong-khach-001-1377-0.jpg">
+                                <span>Đồng hồ treo tường nghệ thuật DHA11</span>
+                                <h2>1.450.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Đồng hồ treo tường nghệ thuật DHA11',
+                        price: '1.450.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2019/05/dong-ho-con-cong-doi-trang-tri-phong-khach-001-1377-0.jpg',
+                        discount: 14
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2018/08/Dh-911-2.jpg">
+                                <span>Đồng hồ treo tường phòng khách DH911</span>
+                                <h2>1.050.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Đồng hồ treo tường phòng khách DH911',
+                        price: '1.050.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2018/08/Dh-911-2.jpg',
+                        discount: 19
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2021/05/dong-ho-treo-tuong-doi-cong.jpg">
+                                <span>Đồng hồ chim công nghệ thuật DHA110</span>
+                                <h2>1.650.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Đồng hồ chim công nghệ thuật DHA110',
+                        price: '1.650.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2021/05/dong-ho-treo-tuong-doi-cong.jpg',
+                        discount: 16
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2022/11/z3874481385329_9c7fdef1842985cb5a74fca7f0b21767.jpg">
+                                <span>Đồng hồ chim công nghệ thuật sang trọng DHA203</span>
+                                <h2>1.850.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Đồng hồ chim công nghệ thuật sang trọng DHA203',
+                        price: '1.850.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2022/11/z3874481385329_9c7fdef1842985cb5a74fca7f0b21767.jpg',
+                        discount: 11
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="more-product" onclick="window.location.href=this.querySelector('a').href;"><a
+                            href="peacock-clock.html">Xem thêm</a><i class="fa-solid fa-angles-right"></i></div>
+                </div>
+
+                <div class="main__product-clock">
+                    <h2>ĐỒNG HỒ QUÀ TẶNG</h2>
+                    <div class="pro_container">
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2023/10/z4822361888385_a1846144eb9401a4122c9f0593330304-min-1-1024x1024.jpg">
+                                <span>Đồng hồ pha lê để bàn quà tặng khách hàng, quà tặng doanh nghiệp QT01</span>
+                                <h2>850.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Đồng hồ pha lê để bàn quà tặng khách hàng, quà tặng doanh nghiệp QT01',
+                        price: '850.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2023/10/z4822361888385_a1846144eb9401a4122c9f0593330304-min-1-1024x1024.jpg',
+                        discount: 22
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2023/11/Dong-ho-de-ban-qua-tang-cong-ty-doanh-nghiep-khach-hang-480x480.jpg">
+                                <span>Đồng hồ gỗ để bàn quà tặng khách hàng, quà tặng doanh nghiệp QT68</span>
+                                <h2>380.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Đồng hồ gỗ để bàn quà tặng khách hàng, quà tặng doanh nghiệp QT68',
+                        price: '380.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2023/11/Dong-ho-de-ban-qua-tang-cong-ty-doanh-nghiep-khach-hang-480x480.jpg',
+                        isNew: true
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2023/10/z4833135940196_69cc5d47a521f7c5968b3f969ead38a1-480x480.jpg">
+                                <span>Đồng hồ treo tường in logo thiết kế theo yêu cầu, quà tặng khách hàng doanh nghiệp DG236</span>
+                                <h2>350.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Đồng hồ treo tường in logo thiết kế theo yêu cầu, quà tặng khách hàng doanh nghiệp DG236',
+                        price: '350.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2023/10/z4833135940196_69cc5d47a521f7c5968b3f969ead38a1-480x480.jpg',
+                        isNew: true
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                        <div class="pro">
+                            <div class="des">
+                                <img src="https://tuongxinh.com.vn/wp-content/uploads/2023/10/z4833101000295_3f82c8b8a70b7c4d17320526dbfd8034-480x480.jpg">
+                                <span>Đồng hồ treo tường in logo thiết kế theo yêu cầu, quà tặng khách hàng doanh nghiệp DG241</span>
+                                <h2>350.000 ₫</h2>
+                            </div>
+                            <a href="#" onclick="addToCartHandler({
+                        name: 'Đồng hồ treo tường in logo thiết kế theo yêu cầu, quà tặng khách hàng doanh nghiệp DG241',
+                        price: '350.000 ₫',
+                        image: 'https://tuongxinh.com.vn/wp-content/uploads/2023/10/z4833101000295_3f82c8b8a70b7c4d17320526dbfd8034-480x480.jpg',
+                        isNew: true
+                        })">
+                                <i class="fa-solid fa-cart-plus cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="more-product" onclick="window.location.href=this.querySelector('a').href;"><a
+                            href="gift-clock.html">Xem thêm</a><i class="fa-solid fa-angles-right"></i></div>
+                </div>
+            </div>
+    </div>
+
+
+    <!-- Hộp thoại chat -->
+    <div class="chat-container">
+        <div class="chat-button" id="chatButton" onclick="toggleChat()">
+            <span id="chatIcon">💬</span>
+        </div>
+        <div class="chat-box" id="chatBox">
+            <div class="chat-header">
+                <img alt="" src="https://media.shopdongho.com/2023/09/chat-support-icon.svg">
+                <h4>Hỗ trợ trực tuyến</h4>
+            </div>
+            <div class="chat-content">
+                <a href="">
+                    <div class="chat-content-icons">
+                        <img alt="" src="https://media.shopdongho.com/2023/03/68OaMdCz-socials-call-icon.svg">
+                        <p class="greentext">0346.775.812</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="chat-content-icons">
+                        <img alt="" src="https://media.shopdongho.com/2023/03/YIo6s9FW-socials-messenger-icon.svg">
+                        <p>Messenger Chat</p>
+                    </div>
+                </a>
+                <a href="https://zalo.me/g/erqzqr097">
+                    <div class="chat-content-icons">
+                        <img alt="" src="https://media.shopdongho.com/2023/03/mEWLxvCZ-socials-zalo-icon.svg">
+                        <p>Zalo Chat</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="chat-content-icons">
+                        <img alt="" src="https://media.shopdongho.com/2023/08/logo-vector-icon.svg">
+                        <p>Hệ Thống Cửa Hàng</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nút quay lại đầu trang -->
+    <a href="#" id="backToTop" class="back-to-top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </a>
+
+    <!--  Footer -->
+    <div class="footer">
+        <div class="footer-in">
+            <div class="footer-in-col">
+                <div class="footer-in-col-1">
+                    <div class="icons-col-1">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <p>
+                        Showroom: Số 54/274 Nguyễn Lân,<br> Trường Chinh, Hà Nội
+                    </p>
+                </div>
+                <div class="footer-in-col-1">
+                    <div class="icons-col-1">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <p>
+                        Điện thoại: <span><a href="">0374.517349</a> </span>-<span> <a
+                            href="">0374.517349</a></span><br>
+                        -<span> <a href="">0374.517349</a></span>
+                    </p>
+                </div>
+                <div class="footer-in-col-1">
+                    <div class="icons-col-1">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <p>
+                        Email: <a href="">nhom63@gmail.com.vn</a>
+                    </p>
+                </div>
+                <div class="footer-in-col-1">
+                    <div class="icons-col-1">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <p>
+                        Giờ mở cửa: 07:00 - 21:00h hàng ngày
+                    </p>
+                </div>
+            </div>
+            <div class="footer-in-col">
+                <p class="footer-large-text">
+                    HƯỚNG DẪN KHÁCH HÀNG
+                </p>
+                <p>
+                    <a href="">Hướng dẫn mua hàng tại cửa hàng</a>
+                </p>
+                <p>
+                    <a href="">Hướng dẫn mua hàng Online</a>
+                </p>
+                <p>
+                    <a href="">Chính sách kiểm hàng</a>
+                </p>
+                <p>
+                    <a href="">Chính sách xử lý khiếu nại</a>
+                </p>
+                <div class="icons-check">
+                    <img alt="" src="https://tuongxinh.com.vn/wp-content/uploads/2024/06/logoSaleNoti.png">
+                </div>
+            </div>
+            <div class="footer-in-col">
+                <p class="footer-large-text">
+                    CHÍNH SÁCH ƯU ĐÃI
+                </p>
+                <p>
+                    <a href="">Chính sách vận chuyển</a>
+                </p>
+                <p>
+                    <a href="">Chính sách đổi trả và hoàn tiền</a>
+                </p>
+                <p>
+                    <a href="">Chính sách thanh toán</a>
+                </p>
+                <p>
+                    <a href="">Chính sách bảo mật thông tin</a>
+                </p>
+                <div class="icons-pay">
+                    <img alt="" src="https://tuongxinh.com.vn/wp-content/uploads/2023/09/footer_trustbadge.png">
+                </div>
+            </div>
+            <div class="footer-in-col">
+                <p class="footer-large-text">ĐĂNG KÝ TƯ VẤN</p>
+                <div class="footer-in-col-input">
+                    <input placeholder="Nhập số điện thoại" type="text">
+                    <button>Gửi</button>
+                </div>
+                <div class="icons-contact">
+                    <a href=""><img alt="" src="https://tuongxinh.com.vn/wp-content/uploads/2023/09/facebook-1.png"></a>
+                    <a href=""><img alt="" src="https://tuongxinh.com.vn/wp-content/uploads/2023/09/zalo.png"></a>
+                    <a href=""><img
+                            alt=""
+                            src="https://tuongxinh.com.vn/wp-content/uploads/2023/09/logo-youtube-tuong-xinh.png"></a>
+                    <a href=""><img alt="" src="https://tuongxinh.com.vn/wp-content/uploads/2023/09/tiktok.png"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <p>
+            &copy; 2024 WATCH63. DESIGN BY WATCH 63
+        </p>
+    </div>
+</div>
+<script>
+
+    function addToCartHandler(product) {
+        cartManager.addItem(product);
+        displayCartCount(); // Cập nhật số lượng sản phẩm trong giỏ
+    }
+
+    document.addEventListener("DOMContentLoaded", function a() {
+        const products = document.querySelectorAll('.des'); // Lấy tất cả các thẻ div có class "pro"
+        products.forEach(product => {
+            const productName = product.querySelector('span').textContent; // Lấy tên sản phẩm từ thẻ <span>
+            const productPrice = product.querySelector('h2').textContent; // Lấy giá sản phẩm từ thẻ <h2>
+            const productImage = product.querySelector('img').src; // Lấy link ảnh sản phẩm từ thẻ <img>
+            // Cập nhật sự kiện onclick cho từng sản phẩm
+            product.setAttribute('onclick', `window.location.href='product_detail.html?name=${encodeURIComponent(productName)}&price=${encodeURIComponent(productPrice)}&image=${encodeURIComponent(productImage)}'`);
+        });
+    });
+
+</script>
+
+<script src="assets/script/chatbox.js"></script>
+<script src="assets/script/logout.js"></script>
+<script src="assets/script/cart.js"></script>
+<script src="assets/script/search-all.js"></script>
+<script src="assets/script/back_to_top.js"></script>
+</body>
+</html>

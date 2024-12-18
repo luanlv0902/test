@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đồng hồ 63 - Admin</title>
+    <link href="./assets/img/logo.jpg" rel="icon" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="admin">
+    <div class="admin-sidebar">
+        <div class="admin-sidebar-logo">
+            <a href="index.html"> <img src="assets/img/logo3.png"></a>
+        </div>
+        <div class="admin-sidebar-nav">
+            <ul>
+                <li><a class="active" href="admin.html"><i class="fas fa-tachometer-alt"></i> Tổng quát</a></li>
+                <li><a href="manage-products.html"><i class="fa-solid fa-bag-shopping"></i> Quản lý sản phẩm</a></li>
+                <li><a href="manage-orders.html"><i class="fas fa-box"></i> Quản lý đơn hàng</a></li>
+                <li><a href="manage-customers.html"><i class="fas fa-users"></i> Quản lý khách hàng</a></li>
+                <li><a href="reports.html"><i class="fas fa-chart-line"></i> Báo cáo</a></li>
+                <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="admin-content">
+        <div class="admin-content-top">
+            <h1>Xin chào Admin, Watch - 63</h1>
+<!--            <img src="assets/img/icon.png">-->
+            <a href="index.html"> <img src="assets/img/icon.png"></a>
+        </div>
+        <div class="admin-content-main">
+            <!-- Dashboard Section -->
+            <div class="dashboard">
+<!--                <h2>Tổng quát</h2>-->
+
+                <!-- Stats Overview -->
+                <div class="stats-overview">
+                    <div class="stats-card">
+                        <i class="fas fa-box"></i>
+                        <div class="stats-card-content">
+                            <h3>Tổng đơn hàng</h3>
+                            <p>245</p>
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <i class="fas fa-users"></i>
+                        <div class="stats-card-content">
+                            <h3>Khách hàng</h3>
+                            <p>185</p>
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="stats-card-content">
+                            <h3>Doanh thu</h3>
+                            <p>500,000,000 ₫</p>
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <div class="stats-card-content">
+                            <h3>Đơn hàng chưa xử lý</h3>
+                            <p>30</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Latest Orders -->
+                <div class="latest-orders">
+                    <h3>Đơn hàng mới nhất</h3>
+                    <table class="orders-table">
+                        <thead>
+                        <tr>
+                            <th>Mã đơn hàng</th>
+                            <th>Tên khách hàng</th>
+                            <th>Tình trạng</th>
+                            <th>Thao tác</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>#12345</td>
+                            <td>Nguyễn Văn A</td>
+                            <td><span class="status-pending">Chờ xử lý</span></td>
+                            <td>
+                                <button class="view-order-btn">Xem</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#12346</td>
+                            <td>Trần Thị B</td>
+                            <td><span class="status-shipped">Đã giao</span></td>
+                            <td>
+                                <button class="view-order-btn">Xem</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Customer Overview -->
+                <div class="customer-overview">
+                    <h3>Khách hàng mới</h3>
+                    <table class="customer-table">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên khách hàng</th>
+                            <th>Email</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>#001</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>a.nguyen@email.com</td>
+                            <td><span class="status-active">Đang hoạt động</span></td>
+                        </tr>
+                        <tr>
+                            <td>#002</td>
+                            <td>Trần Thị B</td>
+                            <td>b.tran@email.com</td>
+                            <td><span class="status-active">Đang hoạt động</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý khách hàng</title>
+    <link href="./assets/img/logo.jpg" rel="icon" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="admin">
+    <div class="admin-sidebar">
+        <div class="admin-sidebar-logo">
+            <a href="index.html"> <img src="assets/img/logo3.png"></a>
+        </div>
+        <div class="admin-sidebar-nav">
+            <ul>
+                <li><a href="admin.html"><i class="fas fa-tachometer-alt"></i> Tổng quát</a></li>
+                <li><a href="manage-products.html"><i class="fa-solid fa-bag-shopping"></i> Quản lý sản phẩm</a></li>
+                <li><a href="manage-orders.html"><i class="fas fa-box"></i> Quản lý đơn hàng</a></li>
+                <li><a class="active" href="manage-customers.html"><i class="fas fa-users"></i> Quản lý khách hàng</a></li>
+                <li><a href="reports.html"><i class="fas fa-chart-line"></i> Báo cáo</a></li>
+                <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="admin-content">
+        <div class="admin-content-top">
+            <h1>Xin chào Admin, Watch - 63</h1>
+            <a href="index.html"> <img src="assets/img/icon.png"></a>
+        </div>
+        <div class="admin-content-main">
+            <div class="admin-tools">
+                <button id="addCustomerBtn" class="add-customer-btn"><i class="fas fa-user-plus"></i> Thêm khách hàng</button>
+            </div>
+
+            <!-- Form thêm khách hàng -->
+            <div id="customerForm">
+                <h3>Thêm khách hàng</h3>
+                <form id="addCustomerForm">
+                    <label for="name">Tên khách hàng:</label>
+                    <input type="text" id="name" required><br><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required><br><br>
+
+                    <label for="phone">Số điện thoại:</label>
+                    <input type="tel" id="phone" required><br><br>
+
+                    <label for="address">Địa chỉ:</label>
+                    <input type="text" id="address" required><br><br>
+
+                    <button type="submit" class="add-customer-btn">Thêm</button>
+                    <button type="button" onclick="cancelForm()">Hủy</button>
+                </form>
+            </div>
+
+
+            <!-- Bảng khách hàng -->
+            <table class="customer-table">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Tên khách hàng</th>
+                    <th>Email</th>
+                    <th>Số điện thoại</th>
+                    <th>Địa chỉ</th>
+                    <th>Hành động</th>
+                </tr>
+                </thead>
+                <tbody id="customerTableBody">
+                <!-- Dữ liệu khách hàng sẽ được thêm vào đây -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="assets/script/manage_customer.js"></script>
+</body>
+</html>
